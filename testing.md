@@ -86,7 +86,7 @@ https://www.testingexcellence.com/software-development-life-cycle-sdlc-phases/
         - GitLab CI doesn't allow messaging from stage to the service so you can't call CLI commands inside of the db service or API service.
             - We could manually create job for every test (possible solution - loops: https://gitlab.com/gitlab-org/gitlab-ce/issues/24535).
             - We could create fo CI the special API endpoint which could reset the database (fragile - it could lead to the huge mistake in production - lost data).
-        - The common API server doesn't support different dbs. It uses the one and only DB like PostgreSQL or MySQL,.. That means that in this situation we need to start API server for every test separately if we want to support running tests in parallel.
+        - The common API server doesn't support multiple instances of db. It uses the one instance of DB. That means that in this situation we need to start API server for every test separately if we want to support running tests in parallel.
         - We can record API responses and then stub every API request (supports parallelism) but then we don't fully embrace the E2E testing rules (use the real responses).
 - Integration tests can use fixtures for API requests (don't use real API responses).
     - Some problems:
