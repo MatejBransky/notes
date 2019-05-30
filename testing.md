@@ -9,7 +9,7 @@ https://www.testingexcellence.com/selenium-and-cucumber-ui-automation-challenges
   - If there is any value in using cucumber, it is at the feature level.
   - Checking functionality of a feature is best done outside of UI, e.g. API tests.
   - Even at API layer tests, cucumber fails miserably.
-  - UI Tests should cover user/business scenarios and not single features.
+  - **UI Tests should cover user/business scenarios** and not single features.
 
 - Summary: Rather Selenium without Cucumber
 
@@ -98,13 +98,15 @@ https://www.testingexcellence.com/software-development-life-cycle-sdlc-phases/
 
 ### Cypress
 
+- *personal experience*
 - runs in browser
 
 **advantages**:
 
 - GUI
-- works in browser
+- works in browser (you write tests with browser API for rendered app)
 - auto waits
+- screenshots & videos
 
 **disadvantages**
 
@@ -117,18 +119,20 @@ https://www.testingexcellence.com/software-development-life-cycle-sdlc-phases/
 
 ### TestCafe
 
+- *adv/disadv gathered from reviews (not tested)*
 - runs in node (uses proxy)
 
 **advantages**
 
-- cross browser support
+- cross browser support (even mobile browsers)
 - supports dynamic stubbing and responses
 - auto waits
+- screenshots
 
 **disadvantages**
 
-- selecting elements is done in node so it doesn't fully support selectors
-- weird syntax
+- selecting elements is done in node so **it doesn't fully support selectors**
+- needs adapters for used frontend frameworks (Vue.js, React, ...) => not universal, **implementation details in tests**
 
 **interesting**
 
@@ -136,6 +140,7 @@ https://www.testingexcellence.com/software-development-life-cycle-sdlc-phases/
 
 ### Nightwatch.js
 
+- *adv/disadv gathered from reviews (not tested)*
 - tests are written in Node.js environment
 - under the hood is Selenium
 - uses webdrivers
@@ -148,7 +153,6 @@ https://www.testingexcellence.com/software-development-life-cycle-sdlc-phases/
 **disadvantages**
 
 - Webdriver is slow
-- async is error prone
 - Webdrivers are still a lot buggy
 - no TypeScript support
 - mature (a few reviews against other frameworks)
